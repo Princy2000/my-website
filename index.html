@@ -6,43 +6,88 @@
     <title>My GitHub Website</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: lightblue;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             text-align: center;
-            padding-top: 100px;
+            width: 400px;
         }
 
         h1 {
             color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #0078D7;
+            background-color: #0078d7;
             color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
-            opacity: 0.9;
+            background-color: #005bb5;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
         }
     </style>
 </head>
 <body>
 
-    <h1>GitHub Website</h1>
+    <div class="container">
+        <h1>Welcome to My GitHub Website</h1>
 
-    <button onclick="showMessage()">
-        Click Me
-    </button>
+        <p>This website is hosted using GitHub Pages.</p>
+
+        <button onclick="showMessage()">Click Me</button>
+
+        <div id="message"></div>
+
+        <footer>
+            Created with HTML, CSS & JavaScript
+        </footer>
+    </div>
 
     <script>
         function showMessage() {
-            alert("Hello from GitHub!");
+            document.getElementById("message").innerHTML =
+                "🎉 Hello! Your website is running successfully on GitHub Pages.";
         }
     </script>
 
